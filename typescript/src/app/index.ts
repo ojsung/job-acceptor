@@ -1,2 +1,3 @@
 import { JobAcceptor } from './job-acceptor'
-export { JobAcceptor as default }
+import { IChannelInfo, IChannelIdentifier } from 'base-job-handler'
+export { JobAcceptor as default, IChannelInfo, IChannelIdentifier }
