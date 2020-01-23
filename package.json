@@ -1,0 +1,89 @@
+{
+  "name": "job-acceptor",
+  "version": "1.0.0",
+  "description": "Subscribes to Redis pubsubs and picks up jobs posted.  Routes jobs to a handler, and manages responding to update requests.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc && node ./src_js/index.js",
+    "start": "tsnd --respawn ./src/app/index.ts",
+    "tsc": "tsc",
+    "lint": "standardx **/*.ts",
+    "lintfix": "standardx **/*.ts --fix",
+    "dev": "tsnd --respawn ./src/app/index.ts  --transpileOnly",
+    "prod": "tsc -d && node ./build/index.js"
+  },
+  "eslintConfig": {
+    "rules": {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "vars": "all",
+          "args": "none",
+          "ignoreRestSiblings": true
+        }
+      ],
+      "no-extend-native": "off",
+      "space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "always",
+          "named": "never",
+          "asyncArrow": "always"
+        }
+      ],
+      "@typescript-eslint/no-use-before-define": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/strict-boolean-expressions": "off",
+      "@typescript-eslint/member-delimiter-style": [
+        "error",
+        {
+          "multiline": {
+            "delimiter": "none",
+            "requireLast": false
+          },
+          "singleline": {
+            "delimiter": "comma",
+            "requireLast": false
+          }
+        }
+      ],
+      "node/no-unsupported-features/es-syntax": "off"
+    }
+  },
+  "standardx": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint/eslint-plugin"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "13.1.8",
+    "@types/redis": "^2.8.14",
+    "@typescript-eslint/eslint-plugin": "2.17.0",
+    "@typescript-eslint/parser": "2.17.0",
+    "standardx": "^5.0.0",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "3.7.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ojsung/job-acceptor.git"
+  },
+  "keywords": [
+    "node",
+    "redis",
+    "pubsub",
+    "microservices"
+  ],
+  "author": "ojsung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ojsung/job-acceptor/issues"
+  },
+  "homepage": "https://github.com/ojsung/job-acceptor#readme",
+  "dependencies": {
+    "base-job-handler": "git+https://github.com/ojsung/base-job-handler.git",
+    "redis": "^2.8.0"
+  }
+}
