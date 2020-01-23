@@ -4,7 +4,7 @@
   "description": "Subscribes to Redis pubsubs and picks up jobs posted.  Routes jobs to a handler, and manages responding to update requests.",
   "main": "index.js",
   "scripts": {
-    "test": "tsc && node ./src_js/index.js",
+    "test": "tsc -d && node ./src/index.js",
     "start": "tsnd --respawn ./src/app/index.ts",
     "tsc": "tsc",
     "lint": "standardx **/*.ts",
