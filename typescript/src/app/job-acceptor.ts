@@ -32,6 +32,7 @@ export class JobAcceptor extends BaseJobHandler {
       // subscribe to all the channels in the list
       this.subscribedChannels.push(jobPostingChannel, jobAcceptanceChannel)
     })
+    this.subscriber.subscribe(this.subscribedChannels)
     this.businessMonitor = new BusinessMonitor(businessTracker)
     this.businessMonitor.beginListening(businessTracker)
   }

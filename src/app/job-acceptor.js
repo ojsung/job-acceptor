@@ -66,6 +66,7 @@ class JobAcceptor extends base_job_handler_1.default {
             // subscribe to all the channels in the list
             this.subscribedChannels.push(jobPostingChannel, jobAcceptanceChannel);
         });
+        this.subscriber.subscribe(this.subscribedChannels);
         this.businessMonitor = new business_monitor_1.default(businessTracker);
         this.businessMonitor.beginListening(businessTracker);
     }
