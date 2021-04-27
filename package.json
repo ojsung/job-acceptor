@@ -84,6 +84,6 @@
   "homepage": "https://github.com/ojsung/job-acceptor#readme",
   "dependencies": {
     "base-job-handler": "git+https://github.com/ojsung/base-job-handler.git",
-    "redis": "^2.8.0"
+    "redis": "^3.1.1"
   }
 }
